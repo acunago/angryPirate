@@ -520,7 +520,8 @@ PlayerSettings:
   webGLCompressionFormat: 1
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    1: EMERALD_AI_PRESENT;INVECTOR_BASIC;INVECTOR_MELEE;INVECTOR_SHOOTER
   platformArchitecture: {}
   scriptingBackend: {}
   il2cppCompilerConfiguration: {}
