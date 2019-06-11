@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject Player1;
+    public GameObject Player2;
+
+    private float timeShoot;
+    private float auxTimeShoot;
+
+    private bool changePlayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,4 +22,9 @@ public class GameManager : MonoBehaviour
     {
         
     }
+
+
+
+
+
 }
