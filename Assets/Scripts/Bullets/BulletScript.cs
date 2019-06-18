@@ -23,9 +23,9 @@ public class BulletScript : MonoBehaviour
     {
         GameObject mSpawn;
         mSpawn = Instantiate(_prefab, tr.position, Quaternion.identity);
-        mSpawn.transform.SetParent(tr);
+        //mSpawn.transform.SetParent(tr);
         mSpawn.GetComponent<Rigidbody>().velocity = _direction;
-
+        Debug.Log("entramos aca");
         if (_force != 0)
         {
             Vector3 additionalForce = _direction.normalized * _force;
@@ -34,7 +34,14 @@ public class BulletScript : MonoBehaviour
     }
 
     protected void OnCollisionEnter(Collision collision)
-    {/* GENERAMOS DAÑO O ALGUN EVENTO?????
+    {
+        if(collision.gameObject.layer == 10)
+        {
+            GameManager.instance.SetPoints(5);
+            //GameManager.instance.SetPoints(collision.gameObject.GetComponent<>())
+        }
+
+       /* GENERAMOS DAÑO O ALGUN EVENTO?????
         if (collision.gameObject.layer == gameObject.layer)
             return;
 

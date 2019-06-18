@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject Player1;
-    public GameObject Player2;
 
-    private float timeShoot;
-    private float auxTimeShoot;
-
-    private bool changePlayer;
+    private float points;
+    public  static GameManager instance;
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (instance != null)
+        {
+            GameObject.Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
     }
 
     // Update is called once per frame
@@ -23,8 +26,15 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public float GetPoints()
+    {
 
+        return points;
+    }
+    public void SetPoints( float aux)
+    {
+        points = points - aux;
 
-
+    }
 
 }

@@ -15,11 +15,22 @@ public class CanonScript : MonoBehaviour
     public float mouseSensitivity = 10;
     public Vector3 pitchMin = new Vector3(0, -55, 10);
     public Vector3 yawMin = new Vector3(0,-55,50);
+
+    public float countCannon = 5;
+    public float countExplosive = 5;
+    public float countSpread = 5;
+
+
     private float yaw;
     private float pitch;
 
     public float rotationSmoothTime = .1f;
     public GameObject CannonPrefab;
+    public GameObject ExpolosivePrefab;
+    public GameObject SpreadPrefab;
+
+    public GameObject CannonShoot;
+
     public GameObject puntoDisparo;
 
     public float cannonSpeed;
@@ -36,6 +47,7 @@ public class CanonScript : MonoBehaviour
     void Start()
     {
         startRotation = transform.rotation.eulerAngles;
+        CannonShoot = CannonPrefab;
     }
 
     // Update is called once per frame
@@ -58,12 +70,12 @@ public class CanonScript : MonoBehaviour
 
         yaw = Mathf.Clamp(yaw, yawMin.y, yawMin.z);
 
-        Debug.Log(yaw + startRotation.y);
-        currentRotation = Vector3.SmoothDamp(currentRotation, new Vector3(0, yaw + startRotation.y), ref rotationSmoothVelocity, rotationSmoothTime);
-        horizontal.transform.eulerAngles = currentRotation;
+
+        //currentRotation = Vector3.SmoothDamp(currentRotation, new Vector3(0, yaw + startRotation.y), ref rotationSmoothVelocity, rotationSmoothTime);
+        //horizontal.transform.eulerAngles = currentRotation;
 
 
-        currentRotationVert = Vector3.SmoothDamp(currentRotationVert, new Vector3(pitch + startRotation.x, yaw + startRotation.y), ref rotationSmoothVelocityVert, rotationSmoothTime);
+        currentRotationVert = Vector3.SmoothDamp(currentRotationVert, new Vector3(pitch + startRotation.x, startRotation.y), ref rotationSmoothVelocityVert, rotationSmoothTime);
         vertical.transform.eulerAngles = currentRotationVert;
     }
 
@@ -71,14 +83,35 @@ public class CanonScript : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Shoot();
+            Shoot(CannonShoot);
         }
 
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            if (countExplosive >= 0)
+            {
+                CannonShoot = ExpolosivePrefab;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            if (countSpread >= 0)
+            {
+                CannonShoot = SpreadPrefab;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            if (countCannon >= 0)
+            {
+                CannonShoot = CannonPrefab;
+            }
+        }
     }
 
-    private void Shoot()
+    private void Shoot(GameObject cannonShot)
     {
-        GameObject cannon = Instantiate(CannonPrefab, puntoDisparo.transform.position, transform.rotation);
+        GameObject cannon = Instantiate(cannonShot, puntoDisparo.transform.position, transform.rotation);
         Vector3 _direction = 2 * puntoDisparo.transform.forward;
         Vector3 _force = _direction.normalized * cannonSpeed;
         cannon.transform.up = cannon.transform.forward;
