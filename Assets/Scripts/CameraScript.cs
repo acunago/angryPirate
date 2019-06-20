@@ -57,6 +57,8 @@ public class CameraScript : MonoBehaviour
 
         tr.position = Vector3.SmoothDamp(tr.position, _destination, 
             ref smoothVelocity, moveFix);
+
+        tr.LookAt(_focus);
     }
 
     // Ajusta el zoom de la cámara

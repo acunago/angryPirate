@@ -60,7 +60,7 @@ MonoBehaviour:
   ExpolosivePrefab: {fileID: 1788710485, guid: 254c8e2b4be38d446895619464e48acd, type: 3}
   SpreadPrefab: {fileID: 1788710485, guid: d3ab08a6689095940b023e7718654a75, type: 3}
   CannonShoot: {fileID: 0}
-  puntoDisparo: {fileID: 899467503}
+  puntoDisparo: {fileID: 899467504}
   cannonSpeed: 40
   status: 0
 --- !u!1 &899467503

@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class SpreadBullet : BulletScript
 {
+    [Header("General Settings")]
+    [Tooltip("Action Key")]
+    [SerializeField]
+    protected KeyCode mKey = KeyCode.E;
+
     [Header("Spread Settings")]
     [Tooltip("Fragments Prefab")]
     [SerializeField]
@@ -18,8 +23,10 @@ public class SpreadBullet : BulletScript
     [SerializeField]
     private float aForce = 0;
 
-    void Update()
+    protected override void Update()
     {
+        base.Update();
+
         if (Input.GetKeyDown(mKey))
             MyBehaviour();
     }
@@ -27,6 +34,8 @@ public class SpreadBullet : BulletScript
     // Fragmenta la bala en varios fragmentos
     private void MyBehaviour()
     {
+        GameManager.instance.ClearTargets();
+
         float _step = 360f / fCount;
         float _ang = 0f;
 

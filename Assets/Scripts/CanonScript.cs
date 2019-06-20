@@ -31,7 +31,7 @@ public class CanonScript : MonoBehaviour
 
     public GameObject CannonShoot;
 
-    public GameObject puntoDisparo;
+    public Transform puntoDisparo;
 
     public float cannonSpeed;
 
@@ -43,14 +43,13 @@ public class CanonScript : MonoBehaviour
     private Vector3 startRotation;
 
     public ActiveCanon status;
-    // Start is called before the first frame update
+
     void Start()
     {
         startRotation = transform.rotation.eulerAngles;
         CannonShoot = CannonPrefab;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (status == ActiveCanon.Active)
@@ -59,6 +58,8 @@ public class CanonScript : MonoBehaviour
             InputPress();
         }
     }
+
+    // Movimiento del cañon
     private void Movement()
     {
         Vector3 posFinal = Vector3.zero;
@@ -79,6 +80,7 @@ public class CanonScript : MonoBehaviour
         vertical.transform.eulerAngles = currentRotationVert;
     }
 
+    // Consola de inputs
     private void InputPress()
     {
         if (Input.GetMouseButtonDown(0))
@@ -109,13 +111,17 @@ public class CanonScript : MonoBehaviour
         }
     }
 
+    // Disparo del cañon
     private void Shoot(GameObject cannonShot)
     {
-        GameObject cannon = Instantiate(cannonShot, puntoDisparo.transform.position, transform.rotation);
-        Vector3 _direction = 2 * puntoDisparo.transform.forward;
+        GameObject cannon = Instantiate(cannonShot, puntoDisparo.position, transform.rotation);
+        Vector3 _direction = puntoDisparo.forward;
         Vector3 _force = _direction.normalized * cannonSpeed;
         cannon.transform.up = cannon.transform.forward;
         cannon.transform.GetComponent<Rigidbody>().AddForce(_force, ForceMode.Impulse);
+
+        GameManager.instance.ClearTargets();
+        GameManager.instance.AddTarget(cannon.transform);
 
         //status = ActiveCanon.Disable;
     }

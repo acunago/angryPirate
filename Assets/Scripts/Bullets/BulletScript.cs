@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    [Header("General Settings")]
-    [Tooltip("Action Key")]
-    [SerializeField]
-    protected KeyCode mKey = KeyCode.E;
-
     protected Transform tr;
     protected Rigidbody rb;
 
@@ -18,6 +13,11 @@ public class BulletScript : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
+    protected virtual void Update()
+    {
+        KillMeNow(-2.5f);
+    }
+
     // Spawnea objetos con una direccion y una fuerza adicional
     public void SpawnWithDirection(GameObject _prefab, Vector3 _direction, float _force)
     {
@@ -25,11 +25,23 @@ public class BulletScript : MonoBehaviour
         mSpawn = Instantiate(_prefab, tr.position, Quaternion.identity);
         //mSpawn.transform.SetParent(tr);
         mSpawn.GetComponent<Rigidbody>().velocity = _direction;
-        Debug.Log("entramos aca");
+
+        GameManager.instance.AddTarget(mSpawn.transform);
+
         if (_force != 0)
         {
             Vector3 additionalForce = _direction.normalized * _force;
             mSpawn.GetComponent<Rigidbody>().AddForce(additionalForce, ForceMode.Impulse);
+        }
+    }
+
+    // Destruye la bala al entrar al mar
+    protected void KillMeNow(float nivel)
+    {
+        if (tr.position.y < nivel)
+        {
+            GameManager.instance.CannonTarget();
+            Destroy(gameObject);
         }
     }
 

@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class ExplosiveBullet : BulletScript
 {
+    [Header("General Settings")]
+    [Tooltip("Action Key")]
+    [SerializeField]
+    protected KeyCode mKey = KeyCode.E;
+
     [Header("Explosive Settings")]
     [Tooltip("Explosion Force")]
     [SerializeField]
@@ -15,8 +20,10 @@ public class ExplosiveBullet : BulletScript
     [SerializeField]
     private GameObject eEffect;
 
-    void Update()
+    protected override void Update()
     {
+        base.Update();
+
         if (Input.GetKeyDown(mKey))
             MyBehaviour();
     }
