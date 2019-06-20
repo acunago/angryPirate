@@ -76,9 +76,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mKey: 101
-  eForce: 10
-  eRadius: 5
-  eEffect: {fileID: 0}
+  eForce: 500
+  eRadius: 50
+  eEffect: {fileID: 177130, guid: 37a14e1121b33c641b1361344a4a856a, type: 3}
 --- !u!1001 &7533460446804208407
 PrefabInstance:
   m_ObjectHideFlags: 0

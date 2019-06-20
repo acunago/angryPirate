@@ -40,7 +40,7 @@ public class BulletScript : MonoBehaviour
     {
         if (tr.position.y < nivel)
         {
-            GameManager.instance.CannonTarget();
+            GameManager.instance.RemoveTarget(transform);
             Destroy(gameObject);
         }
     }

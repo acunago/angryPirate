@@ -27,7 +27,8 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        
+        if (myCam.targets.Count < 1)
+            CannonTarget();
     }
 
     // Devuelve los puntos
@@ -52,6 +53,13 @@ public class GameManager : MonoBehaviour
     public void AddTarget(Transform target)
     {
         myCam.targets.Add(target);
+    }
+
+    // elimina un target a la camara
+    public void RemoveTarget(Transform target)
+    {
+        if (myCam.targets.Contains(target))
+            myCam.targets.Remove(target);
     }
 
     // Devuelve el target al cañon

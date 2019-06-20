@@ -11,6 +11,10 @@ public class CameraScript : MonoBehaviour
     [Tooltip("Direccion de la cámara")]
     [SerializeField]
     private Vector3 cameraDirection = new Vector3(1f, 1.5f, -1f);
+    [SerializeField]
+    private Transform point1;
+    [SerializeField]
+    private Transform point2;
     [Tooltip("Distancia de la cámara")]
     [SerializeField]
     private float cameraDistance = 20f;
@@ -47,6 +51,15 @@ public class CameraScript : MonoBehaviour
 
         Follow();
         Zoom();
+    }
+
+    // Establece la direccion en base a dos puntos
+    private void PointDirection()
+    {
+        if (point1 == null || point2 == null)
+            return;
+
+        cameraDirection = point2.position - point1.position;
     }
 
     // Mueve la cámara para que siga a los targets
