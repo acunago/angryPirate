@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 497376}
   - component: {fileID: 3373780}
   - component: {fileID: 2361366}
+  - component: {fileID: 8354775562632623542}
   m_Layer: 0
   m_Name: SM_Bld_Rickety_Dock_Platform_01
   m_TagString: Untagged
@@ -77,3 +78,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &8354775562632623542
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130328}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.343979, y: 0.12775612, z: 4.039663}
+  m_Center: {x: 0, y: 7.1246395, z: 0.00000023841858}

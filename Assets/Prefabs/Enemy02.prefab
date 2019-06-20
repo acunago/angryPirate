@@ -1094,6 +1094,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8075319256774188830}
   - component: {fileID: 8075319256766495634}
+  - component: {fileID: 1848538457834015783}
+  - component: {fileID: 8886219692629702138}
   m_Layer: 0
   m_Name: Enemy02
   m_TagString: Untagged
@@ -1136,6 +1138,36 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!136 &1848538457834015783
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8075319256773841312}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.926273
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.9340884, z: 0}
+--- !u!54 &8886219692629702138
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8075319256773841312}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &8075319256773842936
 GameObject:
   m_ObjectHideFlags: 0
