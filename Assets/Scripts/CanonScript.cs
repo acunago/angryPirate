@@ -71,11 +71,11 @@ public class CanonScript : MonoBehaviour
         yaw = Mathf.Clamp(yaw, yawMin.y, yawMin.z);
 
 
-        //currentRotation = Vector3.SmoothDamp(currentRotation, new Vector3(0, yaw + startRotation.y), ref rotationSmoothVelocity, rotationSmoothTime);
-        //horizontal.transform.eulerAngles = currentRotation;
+        currentRotation = Vector3.SmoothDamp(currentRotation, new Vector3(0, yaw + startRotation.y), ref rotationSmoothVelocity, rotationSmoothTime);
+        horizontal.transform.eulerAngles = currentRotation;
 
 
-        currentRotationVert = Vector3.SmoothDamp(currentRotationVert, new Vector3(pitch + startRotation.x, startRotation.y), ref rotationSmoothVelocityVert, rotationSmoothTime);
+        currentRotationVert = Vector3.SmoothDamp(currentRotationVert, new Vector3(pitch + startRotation.x, yaw + startRotation.y), ref rotationSmoothVelocityVert, rotationSmoothTime);
         vertical.transform.eulerAngles = currentRotationVert;
     }
 
