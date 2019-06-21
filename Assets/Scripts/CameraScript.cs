@@ -113,4 +113,10 @@ public class CameraScript : MonoBehaviour
         
         return _amplitude;
     }
+
+    // ubica mi camaran en un transform dado
+    public void SetTransform(Transform data)
+    {
+        tr.position = data.position;
+    }
 }

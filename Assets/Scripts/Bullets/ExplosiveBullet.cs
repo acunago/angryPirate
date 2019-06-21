@@ -49,6 +49,7 @@ public class ExplosiveBullet : BulletScript
             }
         }
 
+        GameManager.instance.ClearTargets();
         Destroy(gameObject);
 
     }

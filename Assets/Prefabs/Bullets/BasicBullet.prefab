@@ -45,8 +45,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
-  m_Center: {x: 0, y: 0.09, z: 0}
+  m_Radius: 0.3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1788710486
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -55,7 +55,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1788710485}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -82,14 +82,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3772946549888281542}
     m_Modifications:
-    - target: {fileID: 1788710485, guid: 42cb1cf2d50944246898988bc68dfcf5, type: 3}
-      propertyPath: m_Name
-      value: CannonBall
-      objectReference: {fileID: 0}
-    - target: {fileID: 1788710485, guid: 42cb1cf2d50944246898988bc68dfcf5, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 3772946549888281542, guid: 42cb1cf2d50944246898988bc68dfcf5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -144,6 +136,14 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788710485, guid: 42cb1cf2d50944246898988bc68dfcf5, type: 3}
+      propertyPath: m_Name
+      value: CannonBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788710485, guid: 42cb1cf2d50944246898988bc68dfcf5, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 279287624, guid: 42cb1cf2d50944246898988bc68dfcf5, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value

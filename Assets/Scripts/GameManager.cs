@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public CameraScript myCam;
     public Transform myCannon;
+    public Transform camStart;
 
     public Text TotalPoints;
 
@@ -72,6 +73,7 @@ public class GameManager : MonoBehaviour
     public void CannonTarget()
     {
         myCam.targets.Clear();
+        myCam.SetTransform(camStart);
         myCam.targets.Add(myCannon);
     }
 }

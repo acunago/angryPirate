@@ -55,7 +55,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1788710485}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -76,9 +76,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mKey: 101
-  eForce: 500
-  eRadius: 50
-  eEffect: {fileID: 177130, guid: 37a14e1121b33c641b1361344a4a856a, type: 3}
+  eForce: 100
+  eRadius: 10
+  eEffect: {fileID: 199582, guid: bc45bb6342bf8eb45b5de1fc0c980f0a, type: 3}
 --- !u!1001 &7533460446804208407
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -86,14 +86,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3772946549888281542}
     m_Modifications:
-    - target: {fileID: 1788710485, guid: 42cb1cf2d50944246898988bc68dfcf5, type: 3}
-      propertyPath: m_Name
-      value: CannonBall
-      objectReference: {fileID: 0}
-    - target: {fileID: 1788710485, guid: 42cb1cf2d50944246898988bc68dfcf5, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 3772946549888281542, guid: 42cb1cf2d50944246898988bc68dfcf5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -148,6 +140,14 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788710485, guid: 42cb1cf2d50944246898988bc68dfcf5, type: 3}
+      propertyPath: m_Name
+      value: CannonBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788710485, guid: 42cb1cf2d50944246898988bc68dfcf5, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42cb1cf2d50944246898988bc68dfcf5, type: 3}
