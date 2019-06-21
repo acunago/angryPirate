@@ -48,7 +48,7 @@ public class CameraScript : MonoBehaviour
     {
         if (targets.Count == 0)
             return;
-
+        PointDirection();
         Follow();
         Zoom();
     }

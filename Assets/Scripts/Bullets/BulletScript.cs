@@ -42,27 +42,34 @@ public class BulletScript : MonoBehaviour
         {
             GameManager.instance.RemoveTarget(transform);
             Destroy(gameObject);
+            CancelInvoke("KillMeNow");
         }
     }
+    protected void KillMeNow()
+    {
 
+            GameManager.instance.RemoveTarget(transform);
+            Destroy(gameObject);
+        
+    }
     protected void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.layer == 10)
+        if (collision.gameObject.layer == 10)
         {
             GameManager.instance.SetPoints(5);
             //GameManager.instance.SetPoints(collision.gameObject.GetComponent<>())
         }
+        Invoke("KillMeNow",3);
+        /* GENERAMOS DAÑO O ALGUN EVENTO?????
+         if (collision.gameObject.layer == gameObject.layer)
+             return;
 
-       /* GENERAMOS DAÑO O ALGUN EVENTO?????
-        if (collision.gameObject.layer == gameObject.layer)
-            return;
+         if (collision.gameObject.layer == myGlobals.playerLayer
+             || collision.gameObject.layer == myGlobals.enemyLayer)
+         {
+             collision.gameObject.SendMessage("ApplyDamage", bulletDamage);
+         }
 
-        if (collision.gameObject.layer == myGlobals.playerLayer
-            || collision.gameObject.layer == myGlobals.enemyLayer)
-        {
-            collision.gameObject.SendMessage("ApplyDamage", bulletDamage);
-        }
-
-        Destroy(gameObject);*/
+         */
     }
 }

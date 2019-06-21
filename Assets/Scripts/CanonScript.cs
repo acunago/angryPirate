@@ -35,6 +35,12 @@ public class CanonScript : MonoBehaviour
 
     public float cannonSpeed;
 
+
+    public float timeShoot = 2;
+
+    public float auxShoot;
+    private bool hasShoot;
+
     Vector3 rotationSmoothVelocity;
     Vector3 rotationSmoothVelocityVert;
     Vector3 currentRotation;
@@ -54,6 +60,15 @@ public class CanonScript : MonoBehaviour
     {
         if (status == ActiveCanon.Active)
         {
+            if (hasShoot)
+            {
+                auxShoot += Time.deltaTime;
+                if (auxShoot >= timeShoot)
+                {
+                    auxShoot = 0;
+                    hasShoot = false;
+                }
+            }
             Movement();
             InputPress();
         }
@@ -62,6 +77,7 @@ public class CanonScript : MonoBehaviour
     // Movimiento del cañon
     private void Movement()
     {
+        if (hasShoot) return;
         Vector3 posFinal = Vector3.zero;
         yaw += Input.GetAxis("Mouse X") * mouseSensitivity;
         pitch -= Input.GetAxis("Mouse Y") * mouseSensitivity;
@@ -85,7 +101,11 @@ public class CanonScript : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Shoot(CannonShoot);
+            if (!hasShoot)
+            {
+                Shoot(CannonShoot);
+                hasShoot = true;
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
