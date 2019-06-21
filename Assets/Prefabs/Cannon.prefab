@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontal: {fileID: 728421795}
   vertical: {fileID: 2061635418}
-  mouseSensitivity: 10
+  mouseSensitivity: 3
   pitchMin: {x: 0, y: -13, z: 10}
   yawMin: {x: 0, y: -23, z: 20}
   countCannon: 5
@@ -61,7 +61,7 @@ MonoBehaviour:
   SpreadPrefab: {fileID: 1788710485, guid: d3ab08a6689095940b023e7718654a75, type: 3}
   CannonShoot: {fileID: 0}
   puntoDisparo: {fileID: 899467504}
-  cannonSpeed: 40
+  cannonSpeed: 2500
   timeShoot: 2
   auxShoot: 0
   status: 0
