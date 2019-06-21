@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1788710487}
   - component: {fileID: 1788710486}
   - component: {fileID: 2604399950547676536}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BasicBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,6 +85,10 @@ PrefabInstance:
     - target: {fileID: 1788710485, guid: 42cb1cf2d50944246898988bc68dfcf5, type: 3}
       propertyPath: m_Name
       value: CannonBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788710485, guid: 42cb1cf2d50944246898988bc68dfcf5, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3772946549888281542, guid: 42cb1cf2d50944246898988bc68dfcf5,
         type: 3}

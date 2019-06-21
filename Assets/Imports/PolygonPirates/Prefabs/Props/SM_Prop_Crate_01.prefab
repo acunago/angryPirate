@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3376404}
   - component: {fileID: 2356642}
   - component: {fileID: 66441370208587486}
+  - component: {fileID: 1332870718081644757}
   - component: {fileID: 6919434961919659710}
   m_Layer: 0
   m_Name: SM_Prop_Crate_01
@@ -92,6 +93,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.84410644, y: 0.84410626, z: 0.84410626}
   m_Center: {x: -0.00000011920929, y: 0.42205313, z: 0}
+--- !u!114 &1332870718081644757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e53095a40f47c24d88a2f95f0c76927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Points: 5
 --- !u!54 &6919434961919659710
 Rigidbody:
   m_ObjectHideFlags: 0

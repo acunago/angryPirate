@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public CameraScript myCam;
     public Transform myCannon;
+
+    public Text TotalPoints;
 
     private float points;
 
@@ -29,6 +32,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        TotalPoints.text = "Puntaje " + points;
         if (myCam.targets.Count < 1)
             CannonTarget();
     }
