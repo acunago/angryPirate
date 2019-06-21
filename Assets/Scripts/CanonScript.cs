@@ -108,7 +108,7 @@ public class CanonScript : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             if (countExplosive >= 0)
             {
@@ -122,7 +122,7 @@ public class CanonScript : MonoBehaviour
                 CannonShoot = SpreadPrefab;
             }
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             if (countCannon >= 0)
             {
