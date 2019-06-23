@@ -87,6 +87,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3772946549888281542}
     m_Modifications:
+    - target: {fileID: 1788710485, guid: 42cb1cf2d50944246898988bc68dfcf5, type: 3}
+      propertyPath: m_Name
+      value: CannonBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788710485, guid: 42cb1cf2d50944246898988bc68dfcf5, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 3772946549888281542, guid: 42cb1cf2d50944246898988bc68dfcf5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -142,14 +150,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1788710485, guid: 42cb1cf2d50944246898988bc68dfcf5, type: 3}
-      propertyPath: m_Name
-      value: CannonBall
-      objectReference: {fileID: 0}
-    - target: {fileID: 1788710485, guid: 42cb1cf2d50944246898988bc68dfcf5, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
+    - target: {fileID: 8490347754404519057, guid: 42cb1cf2d50944246898988bc68dfcf5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e970e2186953aca4fb756199d98cc895, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42cb1cf2d50944246898988bc68dfcf5, type: 3}
 --- !u!4 &2545063003587588227 stripped

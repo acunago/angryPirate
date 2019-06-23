@@ -52,6 +52,4 @@ public class MainMenuManager : MonoBehaviour
         Application.Quit();
         Debug.Log("Game is exiting..");
     }
-
-
 }

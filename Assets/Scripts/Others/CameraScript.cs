@@ -6,30 +6,32 @@ using UnityEngine;
 public class CameraScript : MonoBehaviour
 {
     [Header("Target Settings")]
-    [Tooltip("Objetivos a seguir")]
+    [Tooltip("Following targets")]
     public List<Transform> targets;
-    [Tooltip("Direccion de la cámara")]
+    [Tooltip("Direction of the camera distance")]
     [SerializeField]
     private Vector3 cameraDirection = new Vector3(1f, 1.5f, -1f);
+    [Tooltip("Direction of the camera distance with points")]
     [SerializeField]
     private Transform point1;
+    [Tooltip("Direction of the camera distance with points")]
     [SerializeField]
     private Transform point2;
-    [Tooltip("Distancia de la cámara")]
+    [Tooltip("Camera distance")]
     [SerializeField]
     private float cameraDistance = 20f;
 
     [Header("Movement Settings")]
-    [Tooltip("Zoom mínimo de la cámara")]
+    [Tooltip("Minimum camera zoom")]
     [SerializeField]
     private float zoomMin = 60f;
-    [Tooltip("Zoom máximo de la cámara")]
+    [Tooltip("Maximum camera zoom")]
     [SerializeField]
     private float zoomMax = 20f;
-    [Tooltip("Factor de ajuste del zoom")]
+    [Tooltip("Zoom fix factor")]
     [SerializeField]
     private float zoomFix = 10f;
-    [Tooltip("Factor de ajuste del movimiento")]
+    [Tooltip("Movement fix factor")]
     [SerializeField]
     private float moveFix = 0.3f;
 

@@ -45,20 +45,20 @@ public class BulletScript : MonoBehaviour
             CancelInvoke("KillMeNow");
         }
     }
+
     protected void KillMeNow()
     {
-
             GameManager.instance.RemoveTarget(transform);
             Destroy(gameObject);
-        
     }
+
     protected void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == 10)
+        /*if (collision.gameObject.layer == 10)
         {
             GameManager.instance.SetPoints(5);
             //GameManager.instance.SetPoints(collision.gameObject.GetComponent<>())
-        }
+        }*/
         Invoke("KillMeNow",3);
         /* GENERAMOS DAÑO O ALGUN EVENTO?????
          if (collision.gameObject.layer == gameObject.layer)

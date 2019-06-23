@@ -377,7 +377,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8075319256773828578}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.000037769318, y: -0.29502368, z: -6.3532977}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 8075319256774188830}
@@ -1112,7 +1112,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8075319256773841312}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 224.1667, y: 0.03, z: 172.96208}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8075319256774133684}
@@ -1151,7 +1151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e53095a40f47c24d88a2f95f0c76927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Points: 20
+  mPoints: 250
+  mSound: {fileID: 8300000, guid: e5056c2a1c43f7f4d9dfc9d122274729, type: 3}
 --- !u!136 &1848538457834015783
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1162,10 +1163,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.926273
+  m_Radius: 0.25
+  m_Height: 1.85
   m_Direction: 1
-  m_Center: {x: 0, y: 0.9340884, z: 0}
+  m_Center: {x: 0, y: 0.91, z: 0}
 --- !u!54 &8886219692629702138
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1174,7 +1175,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8075319256773841312}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1

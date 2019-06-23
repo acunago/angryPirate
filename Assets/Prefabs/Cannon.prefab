@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 728421795}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -34,7 +34,7 @@ Transform:
   - {fileID: 3831765339097792}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &728421796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,24 +47,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 630224fd50876904b9001ba38fcac670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontal: {fileID: 728421795}
-  vertical: {fileID: 2061635418}
-  mouseSensitivity: 3
-  pitchMin: {x: 0, y: -13, z: 10}
-  yawMin: {x: 0, y: -23, z: 20}
-  countCannon: 5
-  countExplosive: 1
-  countSpread: 5
-  rotationSmoothTime: 0.1
-  CannonPrefab: {fileID: 1788710485, guid: c98c7ed49d3423e4da3b1dbd872181f5, type: 3}
-  ExpolosivePrefab: {fileID: 1788710485, guid: 254c8e2b4be38d446895619464e48acd, type: 3}
-  SpreadPrefab: {fileID: 1788710485, guid: d3ab08a6689095940b023e7718654a75, type: 3}
-  CannonShoot: {fileID: 0}
-  puntoDisparo: {fileID: 899467504}
-  cannonSpeed: 2500
-  timeShoot: 2
-  auxShoot: 0
-  status: 0
+  mouseSensitivity: 2
+  shootCooldown: 2
+  shootSpawn: {fileID: 899467504}
+  shootForce: 2500
+  prefabs:
+  - {fileID: 1788710485, guid: c98c7ed49d3423e4da3b1dbd872181f5, type: 3}
+  - {fileID: 1788710485, guid: d3ab08a6689095940b023e7718654a75, type: 3}
+  - {fileID: 1788710485, guid: 254c8e2b4be38d446895619464e48acd, type: 3}
+  bullets: 140000000500000002000000
+  shootSound: {fileID: 8300000, guid: 31135b0ce73110e43aaf562dddd7b7c0, type: 3}
+  mBarrel: {fileID: 4509157412937358511}
+  mYaw: {x: 0, y: -30, z: 30}
+  mPitch: {x: 0, y: -55, z: 10}
+  moveFix: 0.1
+  mState: 0
+  currentShoot: 0
 --- !u!1 &899467503
 GameObject:
   m_ObjectHideFlags: 0

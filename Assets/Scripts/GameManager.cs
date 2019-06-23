@@ -6,13 +6,18 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public CameraScript myCam;
-    public Transform myCannon;
-    public Transform camStart;
 
-    public Text TotalPoints;
+    [Header("Camera Settings")]
+    [Tooltip("Main Camera Access")]
+    public CameraScript mCamera;
+    [Tooltip("Camera respawn position after shooting")]
+    public Transform cameraRespawn;
+    [Tooltip("Cannon target position")]
+    public Transform cannonTarget;
 
-    private float points;
+    [Header("Private Checks")]
+    [SerializeField]
+    private int points;
 
     void Start()
     {
@@ -25,55 +30,62 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        CursorSettings();
         CannonTarget();
 
+        points = 0;
     }
 
     void Update()
     {
-        TotalPoints.text = "Puntaje " + points;
-        if (myCam.targets.Count < 1)
+        if (mCamera.targets.Count < 1)
             CannonTarget();
     }
 
-    // Devuelve los puntos
-    public float GetPoints()
+    // Ajusta la configuracion del Mouse
+    private void CursorSettings()
     {
-        return points;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
-    // Suma puntos
-    public void SetPoints(float aux)
+    // Devuelve el target al cañon
+    private void CannonTarget()
     {
-        points = points + aux;
+        mCamera.targets.Clear();
+        mCamera.SetTransform(cameraRespawn);
+        mCamera.targets.Add(cannonTarget);
     }
 
     // Limpia la lista de targets
     public void ClearTargets()
     {
-        myCam.targets.Clear();
+        mCamera.targets.Clear();
     }
 
     // Agrega un target a la camara
     public void AddTarget(Transform target)
     {
-        myCam.targets.Add(target);
+        mCamera.targets.Add(target);
     }
 
     // elimina un target a la camara
     public void RemoveTarget(Transform target)
     {
-        if (myCam.targets.Contains(target))
-            myCam.targets.Remove(target);
+        if (mCamera.targets.Contains(target))
+            mCamera.targets.Remove(target);
     }
 
-    // Devuelve el target al cañon
-    public void CannonTarget()
+    // Devuelve los puntos
+    public int GetPoints()
     {
-        myCam.targets.Clear();
-        myCam.SetTransform(camStart);
-        myCam.targets.Add(myCannon);
+        return points;
     }
+
+    // Suma puntos
+    public void SetPoints(int _addingPoints)
+    {
+        points += _addingPoints;
+    }
+    
 }
