@@ -16,6 +16,12 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
+        MakeSingleton();
+    }
+
+    // Convierte el objeto en singleton
+    private void MakeSingleton()
+    {
         if (instance != null)
         {
             GameObject.Destroy(gameObject);

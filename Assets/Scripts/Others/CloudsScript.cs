@@ -4,18 +4,13 @@ using UnityEngine;
 
 public class CloudsScript : MonoBehaviour
 {
-    private float i;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-        
-    }
+    [Header("General Settings")]
+    [Tooltip("Speed of clouds")]
+    [SerializeField]
+    private float speed;
 
-    // Update is called once per frame
     void Update()
     {
-        i += Time.deltaTime;
-            transform.Rotate( new  Vector3(0, Mathf.Abs(Mathf.Sin(i)) * Time.deltaTime, 0));
+        transform.Rotate( Vector3.up * speed * Time.deltaTime);
     }
 }

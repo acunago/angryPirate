@@ -26,13 +26,18 @@ public class TargetScript : MonoBehaviour
     {
         if (collision.gameObject.layer == 9)
         {
-            GameManager.instance.SetPoints(mPoints);
-            Destroy(gameObject, 1);
-            if(anim != null)
-                anim.SetBool("death", true);
-            if (mSound != null)
-                AudioManager.instance.PlaySound(mSound);
+            Die();
         }
+    }
+
+    public void Die()
+    {
+        GameManager.instance.SetPoints(mPoints);
+        Destroy(gameObject, 1);
+        if (anim != null)
+            anim.SetBool("death", true);
+        if (mSound != null)
+            AudioManager.instance.PlaySound(mSound);
     }
 
 }

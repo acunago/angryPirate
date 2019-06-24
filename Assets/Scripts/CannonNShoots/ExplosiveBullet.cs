@@ -35,22 +35,20 @@ public class ExplosiveBullet : BulletScript
 
         Collider[] colliders = Physics.OverlapSphere(tr.position, eRadius);
         foreach (Collider nearby in colliders)
-        {/* GENERAMOS DAÑO O ALGUN EVENTO?????
-            if (nearby.gameObject.layer == myGlobals.playerLayer
-            || nearby.gameObject.layer == myGlobals.enemyLayer)
-            {
-                nearby.gameObject.SendMessage("ApplyDamage", explosionDamage); // MEJORAR CURVA DE DAÑO
-            }*/
-
+        {
             Rigidbody afected = nearby.GetComponent<Rigidbody>();
             if (afected != null)
-            {
                 afected.AddExplosionForce(eForce, tr.position, eRadius);
-            }
         }
 
+        colliders = Physics.OverlapSphere(tr.position, eRadius/2);
+        foreach (Collider nearby in colliders)
+        {
+            TargetScript victim = nearby.GetComponent<TargetScript>();
+            if (victim != null)
+                victim.Die();
+        }
         GameManager.instance.ClearTargets();
         Destroy(gameObject);
-
     }
 }

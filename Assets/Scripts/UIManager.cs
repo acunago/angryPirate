@@ -9,6 +9,9 @@ public class UIManager : MonoBehaviour
     [Tooltip("Score points output")]
     [SerializeField]
     private Text score;
+    [Tooltip("Time left output")]
+    [SerializeField]
+    private Slider timeLeft;
     [Tooltip("Basic bullets output")]
     [SerializeField]
     private Text basicBullets;
@@ -35,6 +38,7 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
+        RefreshTime();
         RefreshScore();
         RefreshBullets();
     }
@@ -47,6 +51,12 @@ public class UIManager : MonoBehaviour
 
         mPoints = GameManager.instance.GetPoints();
         score.text = mPoints + " Pts.";
+    }
+
+    // Mantiene actualizado el tiempo restante
+    private void RefreshTime()
+    {
+        timeLeft.value = GameManager.instance.GetTime();
     }
 
     // Mantiene actualizado la cantidad de balas

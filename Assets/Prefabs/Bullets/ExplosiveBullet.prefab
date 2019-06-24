@@ -75,9 +75,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00db4d957c057c243b7886ddd9fb80ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mKey: 101
-  eForce: 100
-  eRadius: 10
+  mKey: 323
+  eForce: 500
+  eRadius: 7.5
   eEffect: {fileID: 199582, guid: bc45bb6342bf8eb45b5de1fc0c980f0a, type: 3}
 --- !u!1001 &7533460446804208407
 PrefabInstance:

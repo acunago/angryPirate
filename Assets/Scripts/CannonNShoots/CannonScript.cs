@@ -88,9 +88,13 @@ public class CannonScript : MonoBehaviour
     }
 
     // Consola de inputs
-    private void InputPress() // REVISAR UBICACION DE LOS IMPUTS
+    private void InputPress()
     {
-        if (Input.GetMouseButtonDown(0) && bullets[currentShoot] > 0)
+        if (Time.timeScale == 0)
+            return;
+
+        if (Input.GetMouseButtonDown(0) && (bullets[currentShoot] > 0
+            || GameManager.instance.GetGodMode()))
             Shoot();
         
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -125,7 +129,8 @@ public class CannonScript : MonoBehaviour
     {
         mState = CannonState.Shooting;
         GameObject mShot = Instantiate(prefabs[currentShoot], shootSpawn.position, shootSpawn.rotation);
-        bullets[currentShoot]--;
+        if(!GameManager.instance.GetGodMode())
+            bullets[currentShoot]--;
 
         Vector3 _force = shootSpawn.forward * shootForce;
         mShot.transform.GetComponent<Rigidbody>().AddForce(_force, ForceMode.Impulse);

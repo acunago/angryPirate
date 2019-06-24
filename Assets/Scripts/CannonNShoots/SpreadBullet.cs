@@ -37,7 +37,7 @@ public class SpreadBullet : BulletScript
         GameManager.instance.ClearTargets();
 
         float _step = 360f / fCount;
-        float _ang = 0f;
+        float _ang = 90f;
 
         for (int i = 0; i < fCount; i++)
         {

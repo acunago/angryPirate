@@ -59,7 +59,7 @@ MonoBehaviour:
   shootSound: {fileID: 8300000, guid: 31135b0ce73110e43aaf562dddd7b7c0, type: 3}
   mBarrel: {fileID: 4509157412937358511}
   mYaw: {x: 0, y: -30, z: 30}
-  mPitch: {x: 0, y: -55, z: 10}
+  mPitch: {x: 0, y: -15, z: 13}
   moveFix: 0.1
   mState: 0
   currentShoot: 0
