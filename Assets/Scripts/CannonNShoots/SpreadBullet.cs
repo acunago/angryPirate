@@ -46,10 +46,10 @@ public class SpreadBullet : BulletScript
         for (int i = 0; i < fCount; i++)
         {
             Vector3 _dir = Vector3.zero;
-            _dir.x = Mathf.Sin(_ang * Mathf.PI / 180) * sRadius;
-            _dir.y = Mathf.Cos(_ang * Mathf.PI / 180) * sRadius;
+            _dir.x = Mathf.Cos(_ang * Mathf.PI / 180) * sRadius;
+            _dir.y = Mathf.Sin(_ang * Mathf.PI / 180) * sRadius;
             _dir.z = 1f;
-            _dir = _dir.normalized * rb.velocity.magnitude;
+            _dir = _dir.normalized;
 
             SpawnWithDirection(fPrefab, _dir, aForce);
 

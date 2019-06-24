@@ -27,6 +27,7 @@ public class BulletScript : MonoBehaviour
         Vector3 _aligned = _direction.x * tr.right
             + _direction.y * tr.up
             + _direction.z * tr.forward;
+        _aligned = _aligned * rb.velocity.magnitude;
         mSpawn.GetComponent<Rigidbody>().velocity = _aligned;
 
         GameManager.instance.AddTarget(mSpawn.transform);

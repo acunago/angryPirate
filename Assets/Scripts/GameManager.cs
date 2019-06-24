@@ -111,7 +111,8 @@ public class GameManager : MonoBehaviour
     // Pausa el juego
     private void PauseGame()
     {
-        gamePause = !gamePause;
+        if (!gameOver)
+            gamePause = !gamePause;
     }
 
     // Revisa la pausa del juego
@@ -128,10 +129,12 @@ public class GameManager : MonoBehaviour
             resumeButton.GetComponentInChildren<Text>().text = "Resume";
             exitButton.GetComponentInChildren<Text>().text = "Quit";
             pauseScreen.SetActive(true);
+            Cursor.visible = true;
         }
         else
         {
             pauseScreen.SetActive(false);
+            Cursor.visible = false;
             Time.timeScale = 1;
         }
     }
@@ -169,7 +172,7 @@ public class GameManager : MonoBehaviour
         PauseGame();
 
         if (gameOver)
-            GoToScene("Level1");
+            GoToScene("Level01");
     }
 
     // Ajusta la configuracion del Mouse

@@ -78,8 +78,8 @@ MonoBehaviour:
   mKey: 323
   mSound: {fileID: 8300000, guid: de1771d44507cd54dbb1633b5e05e0e5, type: 3}
   fPrefab: {fileID: 1788710485, guid: 615238cbe836aa540bbcba70cc436585, type: 3}
-  fCount: 3
-  sRadius: 0.1
+  fCount: 7
+  sRadius: 0.05
   aForce: 0
 --- !u!1001 &1661216611600948037
 PrefabInstance:
