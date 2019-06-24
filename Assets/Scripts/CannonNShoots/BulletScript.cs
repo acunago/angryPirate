@@ -22,9 +22,12 @@ public class BulletScript : MonoBehaviour
     public void SpawnWithDirection(GameObject _prefab, Vector3 _direction, float _force)
     {
         GameObject mSpawn;
-        mSpawn = Instantiate(_prefab, tr.position, Quaternion.identity);
-        //mSpawn.transform.SetParent(tr);
-        mSpawn.GetComponent<Rigidbody>().velocity = _direction;
+        mSpawn = Instantiate(_prefab, tr.position, tr.rotation);
+        mSpawn.transform.forward = rb.velocity.normalized;
+        Vector3 _aligned = _direction.x * tr.right
+            + _direction.y * tr.up
+            + _direction.z * tr.forward;
+        mSpawn.GetComponent<Rigidbody>().velocity = _aligned;
 
         GameManager.instance.AddTarget(mSpawn.transform);
 
@@ -40,12 +43,13 @@ public class BulletScript : MonoBehaviour
     {
         if (tr.position.y < nivel)
         {
+            CancelInvoke("KillMeNow");
             GameManager.instance.RemoveTarget(transform);
             Destroy(gameObject);
-            CancelInvoke("KillMeNow");
         }
     }
 
+    // Destruye la bala
     protected void KillMeNow()
     {
             GameManager.instance.RemoveTarget(transform);
@@ -54,22 +58,6 @@ public class BulletScript : MonoBehaviour
 
     protected void OnCollisionEnter(Collision collision)
     {
-        /*if (collision.gameObject.layer == 10)
-        {
-            GameManager.instance.SetPoints(5);
-            //GameManager.instance.SetPoints(collision.gameObject.GetComponent<>())
-        }*/
         Invoke("KillMeNow",3);
-        /* GENERAMOS DAÑO O ALGUN EVENTO?????
-         if (collision.gameObject.layer == gameObject.layer)
-             return;
-
-         if (collision.gameObject.layer == myGlobals.playerLayer
-             || collision.gameObject.layer == myGlobals.enemyLayer)
-         {
-             collision.gameObject.SendMessage("ApplyDamage", bulletDamage);
-         }
-
-         */
     }
 }

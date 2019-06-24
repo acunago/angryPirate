@@ -69,7 +69,8 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        mTime += Time.deltaTime;
+        if (!godMode)
+            mTime += Time.deltaTime;
 
         if (mCamera.targets.Count < 1)
             CannonTarget();

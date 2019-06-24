@@ -41,7 +41,7 @@ public class SpreadBullet : BulletScript
         AudioManager.instance.PlaySound(mSound);
 
         float _step = 360f / fCount;
-        float _ang = 90f;
+        float _ang = 0f;
 
         for (int i = 0; i < fCount; i++)
         {
@@ -49,7 +49,7 @@ public class SpreadBullet : BulletScript
             _dir.x = Mathf.Sin(_ang * Mathf.PI / 180) * sRadius;
             _dir.y = Mathf.Cos(_ang * Mathf.PI / 180) * sRadius;
             _dir.z = 1f;
-            _dir = _dir.normalized + rb.velocity;
+            _dir = _dir.normalized * rb.velocity.magnitude;
 
             SpawnWithDirection(fPrefab, _dir, aForce);
 

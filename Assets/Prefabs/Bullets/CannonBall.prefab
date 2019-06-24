@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3772946549888281542}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CannonBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 3817857573607510996}
   - component: {fileID: 8323489712141178536}
   - component: {fileID: 8490347754404519057}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SM_Prop_CannonBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

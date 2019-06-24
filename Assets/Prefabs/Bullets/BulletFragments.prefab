@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1788710487}
   - component: {fileID: 1788710486}
   - component: {fileID: 2604399950547676536}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BulletFragments
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,6 +82,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3772946549888281542}
     m_Modifications:
+    - target: {fileID: 1788710485, guid: 87de7ac6f509b8f44a21f29001cbaa3b, type: 3}
+      propertyPath: m_Name
+      value: CannonBallFragments
+      objectReference: {fileID: 0}
     - target: {fileID: 3772946549888281542, guid: 87de7ac6f509b8f44a21f29001cbaa3b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -136,10 +140,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1788710485, guid: 87de7ac6f509b8f44a21f29001cbaa3b, type: 3}
-      propertyPath: m_Name
-      value: CannonBallFragments
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87de7ac6f509b8f44a21f29001cbaa3b, type: 3}
