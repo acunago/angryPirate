@@ -76,6 +76,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mKey: 323
+  mSound: {fileID: 8300000, guid: de1771d44507cd54dbb1633b5e05e0e5, type: 3}
   fPrefab: {fileID: 1788710485, guid: 615238cbe836aa540bbcba70cc436585, type: 3}
   fCount: 3
   sRadius: 2

@@ -7,7 +7,9 @@ public class SpreadBullet : BulletScript
     [Header("General Settings")]
     [Tooltip("Action Key")]
     [SerializeField]
-    protected KeyCode mKey = KeyCode.E;
+    protected KeyCode mKey = KeyCode.Mouse0;
+    [Tooltip("Action sound")]
+    public AudioClip mSound;
 
     [Header("Spread Settings")]
     [Tooltip("Fragments Prefab")]
@@ -34,7 +36,9 @@ public class SpreadBullet : BulletScript
     // Fragmenta la bala en varios fragmentos
     private void MyBehaviour()
     {
-        GameManager.instance.ClearTargets();
+        GameManager.instance.SetWitness(tr.position);
+        GameManager.instance.RemoveTarget(tr);
+        AudioManager.instance.PlaySound(mSound);
 
         float _step = 360f / fCount;
         float _ang = 90f;

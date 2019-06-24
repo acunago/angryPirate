@@ -76,8 +76,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mKey: 323
-  eForce: 500
-  eRadius: 7.5
+  mSound: {fileID: 8300000, guid: de1771d44507cd54dbb1633b5e05e0e5, type: 3}
+  eForce: 1500
+  eRadius: 10
   eEffect: {fileID: 199582, guid: bc45bb6342bf8eb45b5de1fc0c980f0a, type: 3}
 --- !u!1001 &7533460446804208407
 PrefabInstance:

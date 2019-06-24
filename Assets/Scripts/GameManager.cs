@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
     public Transform cameraRespawn;
     [Tooltip("Cannon target position")]
     public Transform cannonTarget;
+    [Tooltip("Witness target position")]
+    public Transform witnessTarget;
 
     [Header("UI Settings")]
     [Tooltip("Message Text")]
@@ -188,6 +190,14 @@ public class GameManager : MonoBehaviour
     public void ClearTargets()
     {
         mCamera.targets.Clear();
+    }
+
+    // Coloca al witness la lista de targets
+    public void SetWitness(Vector3 _position)
+    {
+        witnessTarget.position = _position;
+        mCamera.targets.Add(witnessTarget);
+        witnessTarget.GetComponent<WitnessScript>().Watch();
     }
 
     // Agrega un target a la camara

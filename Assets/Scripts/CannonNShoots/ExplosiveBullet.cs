@@ -7,7 +7,9 @@ public class ExplosiveBullet : BulletScript
     [Header("General Settings")]
     [Tooltip("Action Key")]
     [SerializeField]
-    protected KeyCode mKey = KeyCode.E;
+    protected KeyCode mKey = KeyCode.Mouse0;
+    [Tooltip("Action sound")]
+    public AudioClip mSound;
 
     [Header("Explosive Settings")]
     [Tooltip("Explosion Force")]
@@ -32,6 +34,7 @@ public class ExplosiveBullet : BulletScript
     private void MyBehaviour()
     {
         Instantiate(eEffect, tr.position, Quaternion.identity);
+        AudioManager.instance.PlaySound(mSound);
 
         Collider[] colliders = Physics.OverlapSphere(tr.position, eRadius);
         foreach (Collider nearby in colliders)
@@ -48,7 +51,8 @@ public class ExplosiveBullet : BulletScript
             if (victim != null)
                 victim.Die();
         }
-        GameManager.instance.ClearTargets();
+        GameManager.instance.SetWitness(tr.position);
+        GameManager.instance.RemoveTarget(tr);
         Destroy(gameObject);
     }
 }

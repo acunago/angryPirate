@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mPoints: 25
+  mSound: {fileID: 8300000, guid: 21ac03cc91809e245ad32575606209b0, type: 3}
 --- !u!65 &6276511071901353082
 BoxCollider:
   m_ObjectHideFlags: 0
